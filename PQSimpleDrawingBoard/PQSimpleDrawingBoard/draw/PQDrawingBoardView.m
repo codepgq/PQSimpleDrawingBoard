@@ -11,6 +11,7 @@
 #import "PQToolView.h"
 #import "PQToolBarTop.h"
 #import "PQToolBarBottom.h"
+#import "NSArray+PQArray.h"
 @interface PQDrawingBoardView ()
 /**
  *  颜色选择器
@@ -62,6 +63,7 @@
 
 @implementation PQDrawingBoardView{
     CGPoint _startP;
+    NSInteger _redoCount;
 }
 
 - (IBAction)panGestureEvent:(UIPanGestureRecognizer *)pan{
@@ -75,6 +77,12 @@
             [self.pathsArray addObject:self.path];
             //添加颜色
             [self.colorsArray addObject:self.nColor];
+            
+            
+            //删除多余缓存
+            [self.redoPathsArray removeObjectFromLastObjectAtIndex:_redoCount];
+            [self.redoColorsArray removeObjectFromLastObjectAtIndex:_redoCount];
+            _redoCount = 0;
             break;
         case UIGestureRecognizerStateChanged:
             //移动时位置
@@ -196,45 +204,52 @@
     self.toolBarBottom.ToolbarGiveUp = ^(){
         
     };
-    //恢复
-    [self.toolBarBottom toolBarRedo:^{
-        //如果存在就才插入
-        if (self.redoPathsArray.count) {
-            [self.pathsArray addObject:[self.redoPathsArray lastObject]];
-            [self.redoPathsArray removeLastObject];
-        }
-        else
-            [self.redoPathsArray removeAllObjects];
-        //如果存在就才插入
-        if (self.redoColorsArray.count) {
-            [self.colorsArray addObject:[self.redoColorsArray lastObject]];
-            [self.redoColorsArray removeLastObject];
-        }
-        else
-            [self.redoColorsArray removeAllObjects];
-        //重绘
-        [self setNeedsDisplay];
-    }];
     //撤销
     [self.toolBarBottom toolBarUndo:^{
-       
         
-        //把最后一项的颜色先存入到恢复数组中，在删除
-        if (self.colorsArray.count) {
+        if (self.colorsArray.count && self.pathsArray.count) {
+            //把最后一项的颜色先存入到恢复数组中，在删除
             [self.redoColorsArray addObject:[self.colorsArray lastObject]];
             [self.colorsArray removeLastObject];
-        }
-        
-        if (self.pathsArray.count) {
+            
             //把最后一项的颜色先存入到恢复数组中，在删除
             [self.redoPathsArray addObject:[self.pathsArray lastObject]];
             [self.pathsArray removeLastObject];
+            
+            _redoCount++;
+            
+            //重绘
+            [self setNeedsDisplay];
         }
-
+        else{
+            NSLog(@"你都还没开始画");
+        }
         
-        //重绘
-        [self setNeedsDisplay];
+        
+       
     }];
+    
+    //恢复
+    [self.toolBarBottom toolBarRedo:^{
+        
+        if (self.redoColorsArray.count && self.redoPathsArray.count) {
+            
+            [self.pathsArray addObject:[self.redoPathsArray lastObject]];
+            [self.redoPathsArray removeLastObject];
+            
+            [self.colorsArray addObject:[self.redoColorsArray lastObject]];
+            [self.redoColorsArray removeLastObject];
+            _redoCount--;
+            //重绘
+            [self setNeedsDisplay];
+        }
+        else{
+            NSLog(@"啥都没有，没得恢复！！！！");
+            [self.redoPathsArray removeAllObjects];
+            [self.redoColorsArray removeAllObjects];
+        }
+    }];
+    
     //清除
     [self.toolBarBottom toolBarClear:^{
         
@@ -243,6 +258,8 @@
         [self.pathsArray removeAllObjects];
         [self.colorsArray removeAllObjects];
         
+        //重绘
+        [self setNeedsDisplay];
     }];
 }
 

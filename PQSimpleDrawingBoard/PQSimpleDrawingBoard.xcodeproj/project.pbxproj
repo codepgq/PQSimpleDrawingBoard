@@ -15,6 +15,7 @@
 		60DD6D211D687391001D782A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60DD6D1F1D687391001D782A /* LaunchScreen.storyboard */; };
 		60DD6D2C1D687391001D782A /* PQSimpleDrawingBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD6D2B1D687391001D782A /* PQSimpleDrawingBoardTests.m */; };
 		60DD6D371D687392001D782A /* PQSimpleDrawingBoardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD6D361D687392001D782A /* PQSimpleDrawingBoardUITests.m */; };
+		60FB40251D6B344B00364BF6 /* NSArray+PQArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FB40241D6B344B00364BF6 /* NSArray+PQArray.m */; };
 		81699C311D6ACD230090F240 /* PQDrawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C301D6ACD230090F240 /* PQDrawingBoardView.m */; };
 		81699C341D6ACDCE0090F240 /* PQChioseColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C331D6ACDCE0090F240 /* PQChioseColorView.m */; };
 		81699C371D6ACF770090F240 /* UIView+pgqViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C361D6ACF770090F240 /* UIView+pgqViewExtension.m */; };
@@ -57,6 +58,8 @@
 		60DD6D321D687392001D782A /* PQSimpleDrawingBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PQSimpleDrawingBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60DD6D361D687392001D782A /* PQSimpleDrawingBoardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PQSimpleDrawingBoardUITests.m; sourceTree = "<group>"; };
 		60DD6D381D687392001D782A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60FB40231D6B344B00364BF6 /* NSArray+PQArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PQArray.h"; sourceTree = "<group>"; };
+		60FB40241D6B344B00364BF6 /* NSArray+PQArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PQArray.m"; sourceTree = "<group>"; };
 		81699C2F1D6ACD230090F240 /* PQDrawingBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQDrawingBoardView.h; sourceTree = "<group>"; };
 		81699C301D6ACD230090F240 /* PQDrawingBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQDrawingBoardView.m; sourceTree = "<group>"; };
 		81699C321D6ACDCE0090F240 /* PQChioseColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQChioseColorView.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				81699C3C1D6AE8460090F240 /* PQToolBarBottom.m */,
 				81699C3E1D6AE8610090F240 /* PQToolView.h */,
 				81699C3F1D6AE8610090F240 /* PQToolView.m */,
+				60FB40231D6B344B00364BF6 /* NSArray+PQArray.h */,
+				60FB40241D6B344B00364BF6 /* NSArray+PQArray.m */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				81699C341D6ACDCE0090F240 /* PQChioseColorView.m in Sources */,
 				60DD6D161D687391001D782A /* AppDelegate.m in Sources */,
 				60DD6D131D687391001D782A /* main.m in Sources */,
+				60FB40251D6B344B00364BF6 /* NSArray+PQArray.m in Sources */,
 				81699C3A1D6AE8180090F240 /* PQToolBarTop.m in Sources */,
 				81699C3D1D6AE8460090F240 /* PQToolBarBottom.m in Sources */,
 				81699C371D6ACF770090F240 /* UIView+pgqViewExtension.m in Sources */,
