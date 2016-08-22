@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,45 +17,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-Ix-C9W">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-Ix-C9W" customClass="PQChioseColorView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="40"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="laG-kI-ZTs"/>
                                 </constraints>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJm-X5-PN6">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJm-X5-PN6" customClass="PQToolBarTop">
                                 <rect key="frame" x="0.0" y="480" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7w3-wR-aLG"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="画笔" id="Dmj-8v-xYU"/>
-                                    <barButtonItem title="矩形" id="kh2-kO-9Od"/>
-                                    <barButtonItem title="圆形" id="4AQ-ns-y5K"/>
-                                    <barButtonItem title="三角形" id="FEx-Yw-nfk"/>
-                                    <barButtonItem title="五角星" id="rFH-Fa-iFV"/>
-                                    <barButtonItem title="导入" id="9zz-S8-kXx"/>
+                                    <barButtonItem title="画笔" id="Dmj-8v-xYU">
+                                        <connections>
+                                            <action selector="penClick:" destination="PJm-X5-PN6" id="c2M-Ax-698"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="矩形" id="kh2-kO-9Od">
+                                        <connections>
+                                            <action selector="rect:" destination="PJm-X5-PN6" id="Bub-ii-nu0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="圆形" id="4AQ-ns-y5K">
+                                        <connections>
+                                            <action selector="circle:" destination="PJm-X5-PN6" id="dH3-7m-XAQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="三角形" id="FEx-Yw-nfk">
+                                        <connections>
+                                            <action selector="square:" destination="PJm-X5-PN6" id="ipw-bd-KiW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="五角星" id="rFH-Fa-iFV">
+                                        <connections>
+                                            <action selector="fiveStar:" destination="PJm-X5-PN6" id="M1m-O4-rN2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="导入" id="9zz-S8-kXx">
+                                        <connections>
+                                            <action selector="importImage:" destination="PJm-X5-PN6" id="0Dn-NO-uS1"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VU-vB-eDJ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VU-vB-eDJ" customClass="PQToolBarBottom">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="u5N-cT-hL9"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="撤销" id="mkV-ki-zvB"/>
-                                    <barButtonItem title="恢复" id="bjI-ZC-VRb"/>
-                                    <barButtonItem title="清屏" id="9c5-dO-cIY"/>
+                                    <barButtonItem title="撤销" id="mkV-ki-zvB">
+                                        <connections>
+                                            <action selector="undo:" destination="6VU-vB-eDJ" id="hn2-NJ-B7T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="恢复" id="bjI-ZC-VRb">
+                                        <connections>
+                                            <action selector="redo:" destination="6VU-vB-eDJ" id="RZs-fx-uOW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="清屏" id="9c5-dO-cIY">
+                                        <connections>
+                                            <action selector="clear:" destination="6VU-vB-eDJ" id="ms9-L0-p8m"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gcO-vZ-fVo"/>
-                                    <barButtonItem title="放弃" id="L3h-7T-hWL"/>
-                                    <barButtonItem title="保存" id="BXn-Qo-wVG"/>
+                                    <barButtonItem title="放弃" id="L3h-7T-hWL">
+                                        <connections>
+                                            <action selector="giveup:" destination="6VU-vB-eDJ" id="eJr-yS-CLI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="保存" id="BXn-Qo-wVG">
+                                        <connections>
+                                            <action selector="save:" destination="6VU-vB-eDJ" id="ip6-Hf-5IK"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QK-ob-dGD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QK-ob-dGD" customClass="PQDrawingBoardView">
                                 <rect key="frame" x="0.0" y="60" width="320" height="380"/>
                                 <color key="backgroundColor" red="0.51920919499999996" green="0.85981473890000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="chioseColor" destination="dVp-Ix-C9W" id="txW-eF-fnL"/>
+                                    <outlet property="toolBarBottom" destination="6VU-vB-eDJ" id="PgO-wO-Fdp"/>
+                                    <outlet property="toolBarTop" destination="PJm-X5-PN6" id="tKG-cc-uyj"/>
+                                    <outlet property="toolView" destination="OyK-fy-MPO" id="jQj-ej-Ebi"/>
+                                    <outletCollection property="gestureRecognizers" destination="meC-hp-wAt" appends="YES" id="Wrg-CW-1NS"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyK-fy-MPO">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyK-fy-MPO" customClass="PQToolView">
                                 <rect key="frame" x="0.0" y="440" width="320" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbF-H1-lEl">
@@ -64,18 +117,24 @@
                                             <constraint firstAttribute="width" constant="60" id="5ey-2d-DCe"/>
                                         </constraints>
                                         <state key="normal" title="橡皮擦"/>
+                                        <connections>
+                                            <action selector="eraser:" destination="OyK-fy-MPO" eventType="touchUpInside" id="AS9-os-J7R"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNc-Wf-L8y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNc-Wf-L8y">
                                         <rect key="frame" x="272" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="lYF-Qe-67T"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="syl-cF-1fu">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="syl-cF-1fu">
                                         <rect key="frame" x="66" y="0.0" width="200" height="41"/>
+                                        <connections>
+                                            <action selector="sliderValueChange:" destination="OyK-fy-MPO" eventType="valueChanged" id="6WU-7L-3aT"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,6 +151,9 @@
                                     <constraint firstAttribute="bottom" secondItem="DNc-Wf-L8y" secondAttribute="bottom" id="wPc-QA-xfb"/>
                                     <constraint firstAttribute="bottom" secondItem="syl-cF-1fu" secondAttribute="bottom" id="wzp-7e-87c"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="numLabel" destination="DNc-Wf-L8y" id="hCj-8P-Ms2"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -117,8 +179,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="meC-hp-wAt">
+                    <connections>
+                        <action selector="panGestureEvent:" destination="7QK-ob-dGD" id="Ey3-lr-VbD"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="331" y="82"/>
+            <point key="canvasLocation" x="145" y="87"/>
         </scene>
     </scenes>
 </document>

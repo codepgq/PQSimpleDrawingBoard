@@ -15,6 +15,12 @@
 		60DD6D211D687391001D782A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60DD6D1F1D687391001D782A /* LaunchScreen.storyboard */; };
 		60DD6D2C1D687391001D782A /* PQSimpleDrawingBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD6D2B1D687391001D782A /* PQSimpleDrawingBoardTests.m */; };
 		60DD6D371D687392001D782A /* PQSimpleDrawingBoardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD6D361D687392001D782A /* PQSimpleDrawingBoardUITests.m */; };
+		81699C311D6ACD230090F240 /* PQDrawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C301D6ACD230090F240 /* PQDrawingBoardView.m */; };
+		81699C341D6ACDCE0090F240 /* PQChioseColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C331D6ACDCE0090F240 /* PQChioseColorView.m */; };
+		81699C371D6ACF770090F240 /* UIView+pgqViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C361D6ACF770090F240 /* UIView+pgqViewExtension.m */; };
+		81699C3A1D6AE8180090F240 /* PQToolBarTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C391D6AE8180090F240 /* PQToolBarTop.m */; };
+		81699C3D1D6AE8460090F240 /* PQToolBarBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C3C1D6AE8460090F240 /* PQToolBarBottom.m */; };
+		81699C401D6AE8610090F240 /* PQToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81699C3F1D6AE8610090F240 /* PQToolView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,18 @@
 		60DD6D321D687392001D782A /* PQSimpleDrawingBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PQSimpleDrawingBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60DD6D361D687392001D782A /* PQSimpleDrawingBoardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PQSimpleDrawingBoardUITests.m; sourceTree = "<group>"; };
 		60DD6D381D687392001D782A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81699C2F1D6ACD230090F240 /* PQDrawingBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQDrawingBoardView.h; sourceTree = "<group>"; };
+		81699C301D6ACD230090F240 /* PQDrawingBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQDrawingBoardView.m; sourceTree = "<group>"; };
+		81699C321D6ACDCE0090F240 /* PQChioseColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQChioseColorView.h; sourceTree = "<group>"; };
+		81699C331D6ACDCE0090F240 /* PQChioseColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQChioseColorView.m; sourceTree = "<group>"; };
+		81699C351D6ACF770090F240 /* UIView+pgqViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+pgqViewExtension.h"; sourceTree = "<group>"; };
+		81699C361D6ACF770090F240 /* UIView+pgqViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+pgqViewExtension.m"; sourceTree = "<group>"; };
+		81699C381D6AE8180090F240 /* PQToolBarTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQToolBarTop.h; sourceTree = "<group>"; };
+		81699C391D6AE8180090F240 /* PQToolBarTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQToolBarTop.m; sourceTree = "<group>"; };
+		81699C3B1D6AE8460090F240 /* PQToolBarBottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQToolBarBottom.h; sourceTree = "<group>"; };
+		81699C3C1D6AE8460090F240 /* PQToolBarBottom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQToolBarBottom.m; sourceTree = "<group>"; };
+		81699C3E1D6AE8610090F240 /* PQToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQToolView.h; sourceTree = "<group>"; };
+		81699C3F1D6AE8610090F240 /* PQToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQToolView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +119,7 @@
 		60DD6D101D687391001D782A /* PQSimpleDrawingBoard */ = {
 			isa = PBXGroup;
 			children = (
+				81699C2E1D6ACBCA0090F240 /* draw */,
 				60DD6D141D687391001D782A /* AppDelegate.h */,
 				60DD6D151D687391001D782A /* AppDelegate.m */,
 				60DD6D171D687391001D782A /* ViewController.h */,
@@ -138,6 +157,25 @@
 				60DD6D381D687392001D782A /* Info.plist */,
 			);
 			path = PQSimpleDrawingBoardUITests;
+			sourceTree = "<group>";
+		};
+		81699C2E1D6ACBCA0090F240 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				81699C351D6ACF770090F240 /* UIView+pgqViewExtension.h */,
+				81699C361D6ACF770090F240 /* UIView+pgqViewExtension.m */,
+				81699C2F1D6ACD230090F240 /* PQDrawingBoardView.h */,
+				81699C301D6ACD230090F240 /* PQDrawingBoardView.m */,
+				81699C321D6ACDCE0090F240 /* PQChioseColorView.h */,
+				81699C331D6ACDCE0090F240 /* PQChioseColorView.m */,
+				81699C381D6AE8180090F240 /* PQToolBarTop.h */,
+				81699C391D6AE8180090F240 /* PQToolBarTop.m */,
+				81699C3B1D6AE8460090F240 /* PQToolBarBottom.h */,
+				81699C3C1D6AE8460090F240 /* PQToolBarBottom.m */,
+				81699C3E1D6AE8610090F240 /* PQToolView.h */,
+				81699C3F1D6AE8610090F240 /* PQToolView.m */,
+			);
+			path = draw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				60DD6D191D687391001D782A /* ViewController.m in Sources */,
+				81699C401D6AE8610090F240 /* PQToolView.m in Sources */,
+				81699C341D6ACDCE0090F240 /* PQChioseColorView.m in Sources */,
 				60DD6D161D687391001D782A /* AppDelegate.m in Sources */,
 				60DD6D131D687391001D782A /* main.m in Sources */,
+				81699C3A1D6AE8180090F240 /* PQToolBarTop.m in Sources */,
+				81699C3D1D6AE8460090F240 /* PQToolBarBottom.m in Sources */,
+				81699C371D6ACF770090F240 /* UIView+pgqViewExtension.m in Sources */,
+				81699C311D6ACD230090F240 /* PQDrawingBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +542,7 @@
 				60DD6D3D1D687392001D782A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60DD6D3E1D687392001D782A /* Build configuration list for PBXNativeTarget "PQSimpleDrawingBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +551,7 @@
 				60DD6D401D687392001D782A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60DD6D411D687392001D782A /* Build configuration list for PBXNativeTarget "PQSimpleDrawingBoardUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +560,7 @@
 				60DD6D431D687392001D782A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
